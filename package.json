@@ -1,0 +1,27 @@
+{
+  "name": "6dof-front-end",
+  "author": "Kovalskii",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 8000"
+  },
+  "engines": {
+    "node": "14.18.0",
+    "npm": "9.1.2"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21",
+    "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3",
+    "vite": "^3.2.3",
+    "vite-plugin-html": "^3.2.0",
+    "ws": "^8.11.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6DofArmApp</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="module" src="socketIoClient.js"></script>
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo"> 6Dof Arm </div>
+    </header>
+
+    <main>
+      <div class="data-box">
+        <div class="data-terminal-container">
+          <!--      must be empty  -->
+        </div>
+
+        <div class="data-terminal-btn-container">
+          <button id="connect-btn">
+            Connect
+          </button>
+          <button id="disconnect-btn">
+            Disconnect
+          </button>
+          <button id="clear-btn">
+            Clear
+          </button>
+        </div>
+
+      </div>
+      <div class="position-container"> 6Dof Arm </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <span class="year">&copy; 2022 Micro Lab. All Rights Reserved.</span>
+      </div>
+    </footer>
+
+  </body>
+</html>
