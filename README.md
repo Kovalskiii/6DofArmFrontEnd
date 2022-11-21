@@ -8,4 +8,4 @@ From the IDE terminal:
 
 2)to run local use command : npm run start
 
-3) to build use command : npm run build
+3)to build use command : npm run build
