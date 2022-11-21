@@ -18,11 +18,14 @@ io.on("connect", (socket) => {
 });
 
 
-function myGreeting() {
+function sendData() {
   io.emit("newData", 123);
+  console.log("123");
 }
 
 (function () {
-  setTimeout(myGreeting, 6000);
+  for (let i = 1; i <= 10; i++) {
+    setTimeout(sendData, 4000);
+  }
 })();
 
