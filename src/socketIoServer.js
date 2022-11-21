@@ -15,7 +15,14 @@ io.on("connect", (socket) => {
     console.log(`disconnect ${socket.id}`);
   });
 
-  socket.on("f", (f) => {
-    console.log(` ${f}`);
-  });
 });
+
+
+function myGreeting() {
+  io.emit("newData", 123);
+}
+
+(function () {
+  setTimeout(myGreeting, 6000);
+})();
+

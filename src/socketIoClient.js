@@ -4,20 +4,22 @@ import { updateDataTerminal } from "./main.js";
 const socket = io("ws://localhost:9000");
 
 socket.on("connect", () => {
-  console.log(`connect ${socket.id}`);
-  updateDataTerminal(socket.id);
+  updateDataTerminal(`Connected - socketId: ${socket.id}`);
+  console.log(`Connected - socketId:${socket.id}`);
 });
 
 socket.on("reconnect", (attempt) => {
-  console.log(`reconnect attempt ${attempt}`);
+  updateDataTerminal(`Reconnect attempt ${attempt}`);
+  console.log(`Reconnect attempt ${attempt}`);
 });
 
 socket.on("disconnect", () => {
-  console.log(`disconnect`);
+  updateDataTerminal(`Disconnected`);
+  console.log(`Disconnected`);
 });
 
 socket.on("newData", (data) => {
-  console.log(data);
+  updateDataTerminal(data);
 });
 
 socket.on("hello", (data) => {
