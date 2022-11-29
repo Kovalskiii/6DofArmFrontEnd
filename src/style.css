@@ -82,9 +82,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  max-height: 90vh;
-  height: 650px;
-  width: 500px;
+  height: 64vh;
+  width: 30vw;
   overflow: auto;
   margin: 15px 15px 15px 15px;
   padding: 15px;
@@ -123,9 +122,6 @@ h5 {
   background: #56575d;
   border-radius: 2px;
 }
-
-
-
 
 .data-terminal-btn-container {
   display: flex;
