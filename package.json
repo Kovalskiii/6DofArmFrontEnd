@@ -16,7 +16,8 @@
     "engine.io-client": "^6.2.3",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
-    "socket.io": "^4.5.3"
+    "socket.io": "^4.5.3",
+    "ws": "^8.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",

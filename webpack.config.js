@@ -6,7 +6,7 @@ module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
     main: "./main.js",
-    socketClient: "./socketIoClient.js",
+    socketClient: "./socketClient.js",
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -27,7 +27,11 @@ module.exports = {
   node: false,
 
   devServer: {
-    port: 7000
+    port: 7000,
+    client: {
+      webSocketTransport: 'ws',
+    },
+    webSocketServer: 'ws',
   },
 
   resolve: {

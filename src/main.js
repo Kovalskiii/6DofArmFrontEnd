@@ -1,9 +1,14 @@
 import './style.css'
+import { connectSocket, disconnectSocket } from "./socketClient.js";
 
 const dataTerminalContainer = document.querySelector('.data-terminal-container');
+export const connectBtn = document.querySelector('#connect-btn');
+export const disconnectBtn = document.querySelector('#disconnect-btn');
 
-document.querySelector('#connect-btn').addEventListener('click', () => updateDataTerminal());
-//document.querySelector('#disconnect-btn').addEventListener('click', () => clearDataTerminal());
+disconnectBtn.disabled = true;
+
+connectBtn.addEventListener('click', () => connectSocket());
+disconnectBtn.addEventListener('click', () => disconnectSocket());
 document.querySelector('#clear-btn').addEventListener('click', () => clearDataTerminal());
 
 export const updateDataTerminal = (itemData) => {
