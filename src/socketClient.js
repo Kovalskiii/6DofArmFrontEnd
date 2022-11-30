@@ -4,7 +4,8 @@ import { connectBtn, disconnectBtn, updateDataTerminal } from "./main.js";
 let ws;
 
 export function connectSocket() {
-  ws = new WebSocket('ws://localhost:9000');
+  ws = new WebSocket('ws://192.168.1.100:1234');
+  ws.binaryType = "arraybuffer";
 
   if (ws) {
     ws.onopen = function open(event) {
@@ -16,8 +17,12 @@ export function connectSocket() {
     };
 
     ws.onmessage = function incoming(data) {
-      console.log('received: %s', data.data);
-      updateDataTerminal(data.data);
+      //console.log('received: %s', data.data);
+      //updateDataTerminal(data.data);
+
+      const view = new DataView(data.data);
+      updateDataTerminal(view.getInt32(0));
+      console.log('received: %s', view.getInt32(0));
 
       //const bytes = blob.slice(0,4);
       //parseInt(bin, 2)
