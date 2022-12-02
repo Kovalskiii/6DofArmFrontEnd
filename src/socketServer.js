@@ -23,10 +23,14 @@ wss.on('connection', async function connection(ws) {
     console.log("Error", error);
   };
 
+  let buffer = new ArrayBuffer(16); // создаётся буфер длиной 16 байт
+  let view = new Uint32Array(buffer);
+  view[0] = 31;
 
-  for (let i = 1; i <= 50; i++) {
+  for (let i = 0; i < 1; i++) {
     setTimeout(function timeout() {
-      ws.send(i);
+      //ws.send(i);
+      ws.send(view)
     }, 3000);
   }
 

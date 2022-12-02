@@ -4,7 +4,8 @@ import { connectBtn, disconnectBtn, updateDataTerminal } from "./main.js";
 let ws;
 
 export function connectSocket() {
-  ws = new WebSocket('ws://192.168.1.100:1234');
+  //ws = new WebSocket('ws://192.168.1.100:1234');
+  ws = new WebSocket('ws://localhost:9000');
   ws.binaryType = "arraybuffer";
 
   if (ws) {
@@ -16,16 +17,11 @@ export function connectSocket() {
       disconnectBtn.disabled = false;
     };
 
-    ws.onmessage = function incoming(data) {
-      //console.log('received: %s', data.data);
-      //updateDataTerminal(data.data);
+    ws.onmessage = function incoming(event) {
 
-      const view = new DataView(data.data);
-      updateDataTerminal(view.getInt32(0));
-      console.log('received: %s', view.getInt32(0));
-
-      //const bytes = blob.slice(0,4);
-      //parseInt(bin, 2)
+      const view = new DataView(event.data)
+      updateDataTerminal(view.getInt8(0));
+      console.log('received:', view.getInt8(0));
 
       //const id = parseInt(data.slice(0,1), 2);
       //const robotState = parseInt(data.slice(0,1), 2);
