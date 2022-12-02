@@ -21,17 +21,14 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: "all"
-    }
+    },
+    runtimeChunk: "single",
   },
   mode: "production",
   node: false,
 
   devServer: {
-    port: 7000,
-    client: {
-      webSocketTransport: 'ws',
-    },
-    webSocketServer: 'ws',
+    port: 7000
   },
 
   resolve: {
